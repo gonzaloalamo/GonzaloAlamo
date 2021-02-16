@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+      <script src="//ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
+  
+      <script>
+        require([
+          "dojo/dom",
+          "dojo/on",
+          "dojo/fx",
+          "dojo/domReady!"
+        ],function(dom, on, fx){
+          var el = dom.byId("contenedor");
+          el.innerHTML = "Haz clic!";
+  
+          on(el, "mouseover", function(evt){
+            fx.slideTo({
+              node: el,
+              top: Math.random()*800,
+              left:Math.random()*800
+            }).play();
+          });
+  
+        });
+      </script>
+    </head>
+  
+    <body>
+      <div id="contenedor" ></div>
+    </body>
+  
+  </html>
